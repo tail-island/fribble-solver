@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<%
+  const endDay = Math.max(...tasks.filter(task => task.endDay).map(task => task.endDay));
+
+  const memberAssigned = tasks.some(task => task.member);
+
+  function getIndent(task) {
+    const parents = tasks.filter(parent => parent.childIds && parent.childIds.includes(task.id));
+
+    if (parents.length == 0) {
+      return 0;
+    }
+
+    return 1 + Math.max(...parents.map(getIndent));
+  }
+
+  function isLeaf(task) {
+    return !task.childIds || task.childIds.length == 0;
+  }
+ %>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>チャート</title>
+    <style>
+      body {
+          font-family: sans-serif;
+          font-size: 10pt;
+      }
+
+      table, td, th {
+        border-collapse: collapse;
+        border: 1px solid #808080;
+      }
+
+      th {
+        font-style: normal;
+        font-weight: normal;
+        text-align: left;
+      }
+
+      th.member {
+          width: 6em;
+      }
+
+      th.day {
+        width: 2em;
+        text-align: right;
+      }
+
+      td.onNode {
+        background-color: #cccccc;
+      }
+
+      td.onLeaf {
+        background-color: #ff8080;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>タスク</th>
+          <th>先行</th>
+          <% if (memberAssigned) { %>
+            <th class="member">担当</th>
+          <% } %>
+          <% for (let i = 0; i <= endDay; ++i) {%>
+            <th class="day"><%= i %></th>
+          <% } %>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (const task of tasks) {%>
+          <tr>
+            <td><%- '&nbsp;&nbsp;'.repeat(getIndent(task)) %><%= task.id %>. <%= task.name %></td>
+            <td><%= task.predecessorIds && task.predecessorIds.join(', ') %></td>
+            <% if (memberAssigned) { %>
+              <td><%= task.member ? task.member.name : '' %></td>
+            <% } %>
+            <% for (let i = 0; i <= endDay; ++i) {%>
+               <td class="<%= task.startDay <= i && i <= task.endDay ? 'on' : 'off' %><%= isLeaf(task) ? "Leaf" : "Node" %>">&nbsp;</td>
+            <% } %>
+          </tr>
+        <% } %>
+      </tbody>
+  </body>
+</html>

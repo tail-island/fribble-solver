@@ -1,0 +1,16 @@
+{
+    "name": "fribble-solver",
+    "version": "1.0.0",
+    "description": "\"Creating a schedule from a gantt chart and member list\"",
+    "scripts": {
+        "start": "node main.mjs",
+        "show-question": "node show-question.mjs",
+        "show-answer": "node show-answer.mjs",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "OJIMA Ryoji",
+    "license": "ISC",
+    "dependencies": {
+        "ejs": "^3.1.2"
+    }
+}

@@ -1,0 +1,172 @@
+{
+    "skills": [
+        {
+            "id": 1,
+            "name": "プログラミング"
+        },
+        {
+            "id": 2,
+            "name": "テスト"
+        },
+        {
+            "id": 3,
+            "name": "モデリング"
+        },
+        {
+            "id": 4,
+            "name": "UIデザイン"
+        },
+        {
+            "id": 5,
+            "name": "評価"
+        }
+    ],
+    "tasks": [
+        {
+            "id": 1,
+            "name": "評価",
+            "childIds": [2, 3]
+        },
+        {
+            "id": 2,
+            "name": "ECMAScript2019",
+            "duration": 1,
+            "skillIds": [1, 5]
+        },
+        {
+            "id": 3,
+            "name": "Vue.js",
+            "duration": 3,
+            "skillIds": [1, 5]
+        },
+        {
+            "id": 4,
+            "name": "fribble-solver",
+            "predecessorIds": [2],
+            "childIds": [5, 6, 7, 8, 9]
+        },
+        {
+            "id": 5,
+            "name": "モデル",
+            "duration": 2,
+            "skillIds": [1, 3]
+        },
+        {
+            "id": 6,
+            "name": "入力",
+            "duration": 1,
+            "skillIds": [1],
+            "predecessorIds": [5]
+        },
+        {
+            "id": 7,
+            "name": "スケジュール生成",
+            "duration": 2,
+            "skillIds": [1],
+            "predecessorIds": [6]
+        },
+        {
+            "id": 8,
+            "name": "出力",
+            "duration": 1,
+            "skillIds": [1],
+            "predecessorIds": [7]
+        },
+        {
+            "id": 9,
+            "name": "テスト",
+            "duration": 1,
+            "skillIds": [1, 2],
+            "predecessorIds": [8]
+        },
+        {
+            "id": 10,
+            "name": "fribble",
+            "predecessorIds": [1, 4],
+            "childIds": [11, 21]
+        },
+        {
+            "id": 11,
+            "name": "開発",
+            "childIds": [12, 15, 18]
+        },
+        {
+            "id": 12,
+            "name": "メンバー・エディター",
+            "childIds": [13, 14]
+        },
+        {
+            "id": 13,
+            "name": "モデル",
+            "duration": 3,
+            "skillIds": [1, 3]
+        },
+        {
+            "id": 14,
+            "name": "ビュー",
+            "duration": 4,
+            "skillIds": [1, 4],
+            "predecessorIds": [13]
+        },
+        {
+            "id": 15,
+            "name": "ガント・チャート・エディター",
+            "childIds": [16, 17]
+        },
+        {
+            "id": 16,
+            "name": "モデル",
+            "duration": 5,
+            "skillIds": [1, 3]
+        },
+        {
+            "id": 17,
+            "name": "ビュー",
+            "duration": 5,
+            "skillIds": [1, 4],
+            "predecessorIds": [16]
+        },
+        {
+            "id": 18,
+            "name": "スケジュール・ビューアー",
+            "childIds": [19, 20]
+        },
+        {
+            "id": 19,
+            "name": "モデル",
+            "duration": 1,
+            "skillIds": [1, 3]
+        },
+        {
+            "id": 20,
+            "name": "ビュー",
+            "duration": 3,
+            "skillIds": [1, 4],
+            "predecessorIds": [19]
+        },
+        {
+            "id": 21,
+            "name": "テスト",
+            "duration": 5,
+            "skillIds": [1, 2],
+            "predecessorIds": [11]
+        }
+    ],
+    "members": [
+        {
+            "id": 1,
+            "name": "アリス",
+            "skillIds": [1, 2, 3, 4, 5]
+        },
+        {
+            "id": 2,
+            "name": "ボブ",
+            "skillIds": [1, 2, 3, 4]
+        },
+        {
+            "id": 3,
+            "name": "チャーリー",
+            "skillIds": [1, 2, 3]
+        }
+    ]
+}

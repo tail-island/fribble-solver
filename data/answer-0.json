@@ -1,0 +1,32 @@
+[
+    {
+        "taskId": 3,
+        "memberId": 2,
+        "startDay": 0,
+        "endDay": 2
+    },
+    {
+        "taskId": 6,
+        "memberId": 1,
+        "startDay": 0,
+        "endDay": 3
+    },
+    {
+        "taskId": 4,
+        "memberId": 2,
+        "startDay": 4,
+        "endDay": 8
+    },
+    {
+        "taskId": 7,
+        "memberId": 2,
+        "startDay": 9,
+        "endDay": 14
+    },
+    {
+        "taskId": 8,
+        "memberId": 1,
+        "startDay": 15,
+        "endDay": 19
+    }
+]
